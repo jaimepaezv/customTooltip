@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tooltips Personalizados</title>
+    <link rel="stylesheet" href="customTooltip.css">
+    <style>
+        /* Estilos adicionales para el demo (opcional, se pueden mover al CSS) */
+        body {
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tooltips Personalizados y Mejorados Demo</h1>
+
+    <div class="container">
+        <button data-tooltip="Este es un tooltip en un botón">Botón con Tooltip</button>
+        <a href="#" data-tooltip="Enlace con tooltip más largo, para probar el ajuste de ancho y posición en pantalla.">Enlace Tooltip Largo</a>
+        <span class="tooltip-target" data-tooltip="Tooltip en un elemento span, puede ser cualquier elemento HTML.">Span Tooltip</span>
+        <br><br>
+        <button data-tooltip="Tooltip posicionado debajo del elemento.">Tooltip Abajo (por defecto arriba si cabe)</button>
+        <button data-tooltip="Tooltip con contenido más extenso, para probar el wrapping del texto en el tooltip personalizado y responsivo.">Tooltip Extenso para probar wrapping</button>
+    </div>
+
+    <script src="customTooltip.js"></script>
+</body>
+</html>

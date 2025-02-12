@@ -1,0 +1,62 @@
+.custom-tooltip {
+    position: fixed; /* Fixed para que se mantenga en la ventana, absolute podría servir también */
+    z-index: 1001; /* Asegurar que esté por encima de otros elementos */
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.15s ease-in-out; /* Transición suave para la opacidad */
+    pointer-events: none; /* Para que no interfiera con eventos del elemento debajo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.custom-tooltip.tooltip-visible {
+    opacity: 1; /* Visible al añadir esta clase */
+}
+
+/* Opcional: Flecha o triángulo para señalar al elemento */
+.custom-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.custom-tooltip.tooltip-visible::after {
+    opacity: 1; /* Mostrar la flecha cuando el tooltip es visible */
+}
+
+/* Estilos básicos para el demo (opcional) */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+button, a, span.tooltip-target {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block; /* Para que se comporten como elementos en línea */
+    margin: 5px;
+    position: relative; /* Necesario para el posicionamiento relativo del tooltip */
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+span.tooltip-target {
+    background-color: #e0e0f0;
+    border: 1px dashed #999;
+}
